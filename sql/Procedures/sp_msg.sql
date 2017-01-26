@@ -22,7 +22,7 @@ DROP PROCEDURE IF EXISTS sp_msg;
 
 CREATE DEFINER = CURRENT_USER
 PROCEDURE sp_msg(
-  IN  in_languageID  CHAR(3),
+  IN  in_languageID  CHAR(2),
   IN  in_messageID 	 INT,
   IN  in_timeStamp   BOOLEAN,
   OUT out_result     TEXT)
