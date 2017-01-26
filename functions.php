@@ -1,6 +1,6 @@
 <?php
 include "vendor/jublonet/codebird-php/src/codebird.php";
-include "vendor/textmagic-sms-api-php/TextMagicAPI.php";
+include "vendor/textmagic/smsphp/src/TextMagicSMS/TextMagicAPI.php";
 
 function msg($language, $messageID, $timestamp = false)
 {

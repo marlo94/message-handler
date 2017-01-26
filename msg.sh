@@ -12,9 +12,9 @@ else
 fi
 case "$timestamp" in
     [yY][eE][sS]|[yY])
-        php -r "include 'functions.php';echo msg('$languageID','$messageID',true);"
+        php -r "include 'functions.php';echo msg('$languageID','$messageID',true);echo PHP_EOL;"
         ;;
     *)
-        php -r "include 'functions.php';echo msg('$languageID','$messageID');"
+        php -r "include 'functions.php';echo msg('$languageID','$messageID');echo PHP_EOL;"
         ;;
 esac

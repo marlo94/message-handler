@@ -10,5 +10,5 @@ else
     languageID=$2
     messageID=$3
 fi
-php -r "include 'functions.php'; msg_log('$path','$languageID','$messageID');"
+php -r "include 'functions.php'; msg_log('$path','$languageID','$messageID');echo PHP_EOL;"
 

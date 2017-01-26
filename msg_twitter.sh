@@ -12,9 +12,9 @@ else
 fi
 case "$timestamp" in
     [yY][eE][sS]|[yY])
-        php -r "include 'functions.php';msg_twitter('$languageID','$messageID',true);"
+        php -r "include 'functions.php';msg_twitter('$languageID','$messageID',true);echo PHP_EOL;"
         ;;
     *)
-        php -r "include 'functions.php';msg_twitter('$languageID','$messageID',false);"
+        php -r "include 'functions.php';msg_twitter('$languageID','$messageID',false);echo PHP_EOL;"
         ;;
 esac

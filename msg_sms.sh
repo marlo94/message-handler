@@ -12,4 +12,4 @@ else
     messageID=$2
     phones=$3
 fi
-    php -r "include 'functions.php';msg_sms('$languageID','$messageID',array($phones));"
+    php -r "include 'functions.php';msg_sms('$languageID','$messageID',array($phones));echo PHP_EOL;"
