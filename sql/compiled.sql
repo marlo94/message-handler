@@ -1200,8 +1200,8 @@ FOR EACH ROW
        CONCAT(OLD.fiLanguage, " | ", OLD.fiMessage, " | ", OLD.dtText, " | ", OLD.dtCreateDate));
   END //
 
-DROP TRIGGER IF EXISTS tr_tblType_au;
-CREATE TRIGGER tr_tblType_au
+DROP TRIGGER IF EXISTS tr_tblType_ad;
+CREATE TRIGGER tr_tblType_ad
 AFTER DELETE ON tblType
 FOR EACH ROW
   BEGIN
@@ -1209,8 +1209,8 @@ FOR EACH ROW
       (USER(), "tblType", CONCAT(OLD.idType, " | ", OLD.dtCreateDate));
   END //
 
-DROP TRIGGER IF EXISTS tr_tblTypeLanguage_au;
-CREATE TRIGGER tr_tblTypeLanguage_au
+DROP TRIGGER IF EXISTS tr_tblTypeLanguage_ad;
+CREATE TRIGGER tr_tblTypeLanguage_ad
 AFTER DELETE ON tblTypeLanguage
 FOR EACH ROW
   BEGIN

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "---------------------------------------"
-echo " Message Handler installation "
+echo "Message Handler installation "
 echo "---------------------------------------"
 if php -f "sql/compiler.php"; then
     echo "=> SQL successfully compiled"
@@ -9,15 +9,21 @@ else
     echo "=> SQL successfully failed"
     echo "---------------------------------------"
 fi
-if cp config/config-template.json config/config.json; then
-    echo "=> Config file successfully created"
+if [ -e "config/config.json" ] && [ ! -z "config/config.json" ]; then
+        echo "=> Config file already exists"
     echo "---------------------------------------"
 else
-    echo "=> Config file creation failed"
-    echo "---------------------------------------"
+    if cp config/config-template.json config/config.json; then
+        echo "=> Config file successfully created"
+        echo "---------------------------------------"
+    else
+        echo "=> Config file creation failed"
+        echo "---------------------------------------"
+    fi
 fi
-read -p " Desired Database: " database
-read -p " MySQL Username: " username
+
+read -p "Desired Database: " database
+read -p "MySQL Username: " username
 database="DROP DATABASE IF EXISTS $database;CREATE DATABASE IF NOT EXISTS $database;USE $database;"
 if mysql -u $username -p -e "$database source sql/compiled.sql;"; then
     echo "---------------------------------------"
